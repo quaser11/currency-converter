@@ -1,0 +1,182 @@
+@import 'root.scss';
+
+@mixin all-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin delete-border {
+  border: none;
+  outline: none;
+}
+
+.text {
+  color: var(--main-text-color);
+}
+
+.hiddenList{
+  display: none;
+}
+
+.container {
+  width: 1360px;
+  margin: auto;
+}
+
+.first-section {
+  margin-top: 96px;
+
+  &__container {
+    @include all-center;
+  }
+
+  &__title {
+    font-size: 60px;
+    color: var(--main-text-color);
+    margin-bottom: 34px;
+  }
+
+  &__text {
+    margin-bottom: 69px;
+  }
+
+  .currency-converter {
+    @include all-center;
+
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 32px;
+    max-width: 654px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+
+  &__big--text {
+    font-weight: bold;
+  }
+
+  .currency-converter {
+    flex-direction: row;
+    gap: 29px;
+
+    &__first-field {
+      position: relative;
+      width: 370px;
+      height: 64px;
+      border:2px solid var(--border-color);
+      border-radius: 4px;
+
+      &__amount {
+        @include delete-border;
+        width: calc(100% - 140px);
+        height:100%;
+        padding-left:20px;
+      }
+
+      &__select {
+        @include delete-border;
+        position: absolute;
+        padding-left: 57px;
+        padding-right: 0;
+        width: calc(100% - 231px);
+        height: 100%;
+        cursor: pointer;
+        border-left:2px solid var(--border-color);
+
+        &:hover{
+          background-color: transparent;
+        }
+      }
+
+      &__options{
+        margin-top:5px;
+        margin-left:auto;
+        width:140px;
+        height:150px;
+        border:2px solid var(--border-color);
+        border-radius:4px;
+        opacity:0;
+        visibility: hidden;
+        overflow: scroll;
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        .option{
+          padding: 5px 5px 5px 5px;
+          transition: background-color 250ms cubic-bezier(.19,.53,.72,.86);
+          cursor: pointer;
+          &:not(:last-child){
+            border-bottom:2px solid var(--border-color);
+          }
+
+          &:hover{
+            background-color:var(--buttons-color);
+            color: var(--white-color);
+          }
+        }
+      }
+    }
+
+    &__second-field {
+      position: relative;
+      width: 370px;
+      height: 64px;
+      border:2px solid var(--border-color);
+      border-radius: 4px;
+
+      &__amount {
+        @include delete-border;
+        width: calc(100% - 140px);
+        height:100%;
+        padding-left:20px;
+      }
+
+      &__select {
+        @include delete-border;
+        position: absolute;
+        padding-left: 57px;
+        padding-right: 0;
+        width: calc(100% - 231px);
+        height: 100%;
+        cursor: pointer;
+        border-left:2px solid var(--border-color);
+
+        &:hover{
+          background-color: transparent;
+        }
+      }
+
+      &__options{
+        margin-top:5px;
+        margin-left:auto;
+        width:140px;
+        height:150px;
+        border:2px solid var(--border-color);
+        border-radius:4px;
+        opacity:0;
+        visibility: hidden;
+        overflow: scroll;
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        .option{
+          padding: 5px 5px 5px 5px;
+          transition: background-color 250ms cubic-bezier(.19,.53,.72,.86);
+          cursor: pointer;
+          &:not(:last-child){
+            border-bottom:2px solid var(--border-color);
+          }
+
+          &:hover{
+            background-color:var(--buttons-color);
+            color: var(--white-color);
+          }
+        }
+      }
+    }
+  }
+}
